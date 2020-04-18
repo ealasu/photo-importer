@@ -6,8 +6,16 @@ with import <nixpkgs> {
 stdenv.mkDerivation {
   name = "rust-env";
   buildInputs = [
-    pkgs.latest.rustChannels.stable.rust
+    (pkgs.latest.rustChannels.stable.rust.override {
+      extensions = [
+        "rust-src"
+        "rls-preview"
+        "clippy-preview"
+        "rustfmt-preview"
+      ];
+    })
     pkgs.pkgconfig
+    pkgs.cargo-edit
   ];
 
   # Set Environment Variables
