@@ -5,3 +5,7 @@ edition = "2021"
 
 [dependencies]
 fehler = "*"
+failure = "*"
+walkdir = "*"
+rexif = "*"
+clap = { version = "*", features = ["derive"] }

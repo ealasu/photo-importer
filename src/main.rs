@@ -1,19 +1,20 @@
+use std::path::PathBuf;
+
+use clap::Parser;
+use failure::{bail, ensure, Error};
 use fehler::*;
+use rexif;
+use walkdir::WalkDir;
 
-#[throws(i32)]
-fn main() {
-    foo(true)?;
-    println!("Hello, world!");
-
-
-    
+#[derive(Parser)]
+struct Args {
+    dir: PathBuf,
 }
 
-#[throws(i32)]
-fn foo(x: bool) -> i32 {
-    if x {
-        0
-    } else {
-        throw!(1);
+#[throws]
+fn main() {
+    let args = Args::parse();
+    for f in WalkDir::new(args.dir) {
+        println!("Hello, world!");
     }
 }
