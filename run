@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -e
+nixFlakes develop -c 'cargo run'
