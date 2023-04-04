@@ -2,7 +2,7 @@ use fehler::*;
 
 #[throws(i32)]
 fn main() {
-    foo(false)?;
+    foo(true)?;
     println!("Hello, world!");
 
 
