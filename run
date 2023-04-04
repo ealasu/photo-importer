@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 set -e
-nixFlakes develop -c 'cargo run'
+export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
+nixFlakes develop -c cargo run
